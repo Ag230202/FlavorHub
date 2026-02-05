@@ -2,15 +2,9 @@
 
 This is a HTML, CSS, and JavaScript  FlavorHub application.
 
-## Original Stack
-- **Frontend**: Next.js 14, React, TypeScript
-- **Styling**: Tailwind CSS, shadcn/ui components
-- **State Management**: React hooks, SWR
-- **Backend**: Next.js API Routes
-- **Database**: SQL (Neon)
-- **Authentication**: Custom JWT-based auth
 
-## Converted Stack
+
+## Tech Stack
 - **Frontend**: Pure HTML5, CSS3,  JavaScript (ES6+)
 - **Styling**: Custom CSS with CSS Variables
 - **State Management**: JavaScript classes and localStorage
@@ -157,25 +151,7 @@ async login(email, password) {
 }
 ```
 
-## Browser Compatibility
 
-This application works on all modern browsers:
-- ✅ Chrome/Edge 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Opera 76+
-
-## Key Differences from Original
-
-| Feature | Original (Next.js/React) | Converted (Vanilla) |
-|---------|-------------------------|---------------------|
-| Routing | Next.js App Router | Multi-page HTML |
-| Components | React Components | HTML templates |
-| Styling | Tailwind + shadcn/ui | Custom CSS |
-| State | React Hooks | JavaScript Classes |
-| Data Fetching | SWR | Fetch API |
-| Auth | JWT + API | localStorage (demo) |
-| Build | Next.js build | No build needed |
 
 ## Future Enhancements
 
