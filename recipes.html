@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Recipes - FlavorHub</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                    <path d="M7 2v20"></path>
+                    <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+                </svg>
+                <span class="logo-text">FlavorHub</span>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="recipes.html" class="nav-link">Recipes</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-ghost" id="signInBtn">Sign In</button>
+                <button class="btn btn-primary" id="getStartedBtn">Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container recipes-page">
+        <div class="page-header">
+            <h1 class="page-title">Discover Recipes</h1>
+            <p class="page-description">Search and filter recipes based on your preferences</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-section">
+            <div class="filters-grid">
+                <div class="form-group">
+                    <label for="searchQuery" class="form-label">Search</label>
+                    <input 
+                        type="text" 
+                        id="searchQuery" 
+                        class="form-input" 
+                        placeholder="Search recipes..."
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="dietFilter" class="form-label">Diet</label>
+                    <select id="dietFilter" class="form-select">
+                        <option value="all">All Diets</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="gluten free">Gluten Free</option>
+                        <option value="dairy free">Dairy Free</option>
+                        <option value="keto">Keto</option>
+                        <option value="paleo">Paleo</option>
+                        <option value="pescatarian">Pescatarian</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cuisineFilter" class="form-label">Cuisine</label>
+                    <select id="cuisineFilter" class="form-select">
+                        <option value="all">All Cuisines</option>
+                        <option value="american">American</option>
+                        <option value="asian">Asian</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="french">French</option>
+                        <option value="greek">Greek</option>
+                        <option value="indian">Indian</option>
+                        <option value="italian">Italian</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="mexican">Mexican</option>
+                        <option value="mediterranean">Mediterranean</option>
+                        <option value="thai">Thai</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeFilter" class="form-label">Max Cooking Time</label>
+                    <select id="timeFilter" class="form-select">
+                        <option value="any">Any Time</option>
+                        <option value="15">15 minutes</option>
+                        <option value="30">30 minutes</option>
+                        <option value="45">45 minutes</option>
+                        <option value="60">1 hour</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" id="searchBtn">
+                <svg class="btn-icon-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                </svg>
+                Search Recipes
+            </button>
+        </div>
+
+        <!-- Results -->
+        <div class="results-section">
+            <div class="results-header">
+                <p class="results-count" id="resultsCount">Loading...</p>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-grid">
+                <div class="skeleton-card">
+                    <div class="skeleton skeleton-image"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text-short"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton skeleton-image"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text-short"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton skeleton-image"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text-short"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton skeleton-image"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text-short"></div>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path>
+                    <line x1="6" y1="17" x2="18" y2="17"></line>
+                </svg>
+                <h3 class="empty-title">No recipes found</h3>
+                <p class="empty-description">Try adjusting your search or filters</p>
+            </div>
+
+            <!-- Recipe Grid -->
+            <div id="recipeGrid" class="recipe-grid"></div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container" id="loadMoreContainer" style="display: none;">
+                <button class="btn btn-outline btn-lg" id="loadMoreBtn">
+                    Load More Recipes
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="authModalTitle" class="modal-title">Sign In</h2>
+                <button class="modal-close" id="closeAuthModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm">
+                    <div class="form-group" id="usernameGroup" style="display: none;">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" id="username" class="form-input" placeholder="Choose a username">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="authSubmitBtn">Sign In</button>
+                </form>
+                <div class="modal-footer">
+                    <p class="modal-switch">
+                        <span id="switchText">Don't have an account?</span>
+                        <button type="button" class="btn-link" id="switchModeBtn">Sign up</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/recipes.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorHub - Recipe Management System</title>
+    <meta name="description" content="Discover, save, and share delicious recipes tailored to your dietary preferences">
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                    <path d="M7 2v20"></path>
+                    <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+                </svg>
+                <span class="logo-text">FlavorHub</span>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="recipes.html" class="nav-link">Recipes</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-ghost" id="signInBtn">Sign In</button>
+                <button class="btn btn-primary" id="getStartedBtn">Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Discover Recipes
+                        <span class="text-primary">Tailored to You</span>
+                    </h1>
+                    <p class="hero-description">
+                        FlavorHub helps you find the perfect recipes based on your dietary
+                        preferences, allergies, and cooking time. Join thousands of home
+                        cooks today.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="recipes.html" class="btn btn-primary btn-lg">
+                            Explore Recipes
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="recipes.html?diet=vegetarian" class="btn btn-outline btn-lg">
+                            Browse Vegetarian
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Everything You Need</h2>
+                    <p class="section-description">
+                        From searching recipes to tracking your favorites, FlavorHub has
+                        all the tools to make cooking easier
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Smart Search</h3>
+                        <p class="feature-description">
+                            Find recipes by ingredients, cuisine type, or dietary requirements
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Advanced Filtering</h3>
+                        <p class="feature-description">
+                            Filter by cooking time, diet preferences, and allergy restrictions
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Reviews & Ratings</h3>
+                        <p class="feature-description">
+                            Read community reviews and share your own cooking experiences
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Personalized</h3>
+                        <p class="feature-description">
+                            Save your dietary preferences for tailored recipe recommendations
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diet Options Section -->
+        <section class="section section-secondary">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Browse by Diet</h2>
+                    <p class="section-description">
+                        Find recipes that match your lifestyle and dietary requirements
+                    </p>
+                </div>
+
+                <div class="diet-grid">
+                    <a href="recipes.html?diet=vegetarian" class="diet-card">
+                        <div class="diet-icon diet-icon-green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                            </svg>
+                        </div>
+                        <h3 class="diet-name">Vegetarian</h3>
+                    </a>
+
+                    <a href="recipes.html?diet=vegan" class="diet-card">
+                        <div class="diet-icon diet-icon-emerald">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                            </svg>
+                        </div>
+                        <h3 class="diet-name">Vegan</h3>
+                    </a>
+
+                    <a href="recipes.html?diet=gluten-free" class="diet-card">
+                        <div class="diet-icon diet-icon-amber">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path>
+                                <line x1="6" y1="17" x2="18" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h3 class="diet-name">Gluten-Free</h3>
+                    </a>
+
+                    <a href="recipes.html?diet=keto" class="diet-card">
+                        <div class="diet-icon diet-icon-orange">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="diet-name">Keto</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section-cta">
+            <div class="container cta-content">
+                <h2 class="cta-title">Ready to Start Cooking?</h2>
+                <p class="cta-description">
+                    Create your free account to save your dietary preferences, rate
+                    recipes, and get personalized recommendations.
+                </p>
+                <a href="recipes.html" class="btn btn-secondary btn-lg">
+                    Get Started Now
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="authModalTitle" class="modal-title">Sign In</h2>
+                <button class="modal-close" id="closeAuthModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm">
+                    <div class="form-group" id="usernameGroup" style="display: none;">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" id="username" class="form-input" placeholder="Choose a username">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="authSubmitBtn">Sign In</button>
+                </form>
+                <div class="modal-footer">
+                    <p class="modal-switch">
+                        <span id="switchText">Don't have an account?</span>
+                        <button type="button" class="btn-link" id="switchModeBtn">Sign up</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
