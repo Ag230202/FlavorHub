@@ -1,6 +1,6 @@
-# FlavorHub - Vanilla HTML/CSS/JS Conversion
+# FlavorHub 
 
-This is a vanilla HTML, CSS, and JavaScript conversion of the original Next.js + React + TypeScript FlavorHub application.
+This is a HTML, CSS, and JavaScript  FlavorHub application.
 
 ## Original Stack
 - **Frontend**: Next.js 14, React, TypeScript
@@ -11,7 +11,7 @@ This is a vanilla HTML, CSS, and JavaScript conversion of the original Next.js +
 - **Authentication**: Custom JWT-based auth
 
 ## Converted Stack
-- **Frontend**: Pure HTML5, CSS3, Vanilla JavaScript (ES6+)
+- **Frontend**: Pure HTML5, CSS3,  JavaScript (ES6+)
 - **Styling**: Custom CSS with CSS Variables
 - **State Management**: JavaScript classes and localStorage
 - **Backend**: Mock data in JavaScript (can be replaced with actual API calls)
@@ -21,7 +21,7 @@ This is a vanilla HTML, CSS, and JavaScript conversion of the original Next.js +
 ## File Structure
 
 ```
-vanilla-conversion/
+-FlavorHub/
 ├── index.html              # Homepage
 ├── recipes.html            # Recipe listing page
 ├── recipe-detail.html      # Individual recipe detail page
